@@ -1,0 +1,32 @@
+{
+    "name": "reactmay/wow-auth",
+    "description": "package for WoW Authentification",
+    "homepage": "https://github.com/reactmay/wow-auth",
+    "authors": [
+        {
+            "name": "Ivan Ivanov",
+            "email": "zugurysus@gmail.com"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^5.5.9 || ^7.0",
+        "thibaud-dt/trinitycore-models": ">=0.1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "reactmay\\WoWAuth\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "reactmay\\WoWAuth\\Providers\\WoWAuthServiceProvider"
+            ],
+            "aliases": {
+                "reactmay": "Flashadvocate\\WoWAuth\\Facades\\WoW"
+            }
+        }
+    }
+}
