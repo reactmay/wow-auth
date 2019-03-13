@@ -4,6 +4,7 @@ namespace reactmay\WoWAuth\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Lang;
 
 /**
  * Class LoginController
@@ -49,5 +50,14 @@ class LoginController extends Controller
 	public function username()
     {
         return 'username';
+    }
+	
+	public function showLoginForm()
+    {
+        $data = [
+            'title' => Lang::get('auth.login_link')
+        ];
+
+        return view('auth.login', $data);
     }
 }
