@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Contracts\Hashing\Hasher as IlluminateHasher;
-
+use Lang;
 
 use reactmay\WoWAuth\Models\Auth\Account;
 
@@ -100,5 +100,14 @@ class RegisterController extends Controller
         }
 
         return Account::create($account);
+    }
+	
+	public function showRegistrationForm()
+    {
+        $data = [
+            'title' => Lang::get('auth.register_link')
+        ];
+
+        return view('auth.register', $data);
     }
 }
