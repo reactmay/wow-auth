@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Contracts\Hashing\Hasher as IlluminateHasher;
 use Illuminate\Support\Str;
+use Lang;
 
 use Illuminate\Http\Request;
 
@@ -75,4 +76,14 @@ class ResetPasswordController extends Controller
         $user->forceFill($data)->save();
     }
 
+    public function showResetForm(Request $request, $token = null)
+    {
+        $data = [
+            'title' => Lang::get('auth.page_change_password')
+        ];
+
+        return view('auth.passwords.reset', $data)->with(
+            ['token' => $token, 'email' => $request->email]
+        );
+    }
 }

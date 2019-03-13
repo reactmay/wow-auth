@@ -4,6 +4,7 @@ namespace reactmay\WoWAuth\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Lang;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -40,4 +41,12 @@ class ForgotPasswordController extends Controller
         $this->middleware('guest');
     }
 
+    public function showLinkRequestForm()
+    {
+        $data = [
+            'title' => Lang::get('auth.page_reset_password')
+        ];
+
+        return view('auth.passwords.email', $data);
+    }
 }
