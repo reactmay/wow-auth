@@ -67,6 +67,9 @@ class ResetPasswordController extends Controller
                 'username' => $user->username,
                 'password' => $password]),
             'remember_token' => Str::random(60),
+			'v' => '',
+            's' => '',
+            'sessionkey' => ''
         ];
 
         if(config('wow-auth.passport')){
