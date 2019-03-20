@@ -63,7 +63,7 @@ class ResetPasswordController extends Controller
 
     protected function resetPassword($user, $password){
         $data = [
-            'sha_pass_hash'  => $this->hasher->make([
+            'pass_hash'  => $this->hasher->make([
                 'username' => $user->username,
                 'password' => $password]),
             'remember_token' => Str::random(60),

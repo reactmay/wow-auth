@@ -87,12 +87,12 @@ class RegisterController extends Controller
         $account = [
             'username'  => $data['username'],
             'email'     => $data['email'],
-            'sha_pass_hash'  => $this->hasher->make([
+            'pass_hash'  => $this->hasher->make([
                 'username' => $data['username'],
                 'password' => $data['password']
             ]),
             'reg_mail' => $data['email'],
-            'expansion' => 2
+            'expansion_id' => 1
         ];
 
         if(config('wow-auth.passport')){

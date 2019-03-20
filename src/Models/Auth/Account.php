@@ -54,6 +54,6 @@ class Account extends AccountWoW implements
     }
 
     public function getAuthPassword(){
-        return $this->sha_pass_hash;
+        return $this->pass_hash;
     }
 }
