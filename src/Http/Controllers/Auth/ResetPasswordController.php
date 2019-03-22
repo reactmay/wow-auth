@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Lang;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class ResetPasswordController
@@ -67,9 +68,6 @@ class ResetPasswordController extends Controller
                 'username' => $user->username,
                 'password' => $password]),
             'remember_token' => Str::random(60),
-			'v' => '',
-            's' => '',
-            'sessionkey' => ''
         ];
 
         if(config('wow-auth.passport')){
@@ -77,6 +75,11 @@ class ResetPasswordController extends Controller
         }
 
         $user->forceFill($data)->save();
+        DB::table('account_session')->where('account_id', $user->account_id)->update([
+            'v' => '',
+            's' => '',
+            'session_key' => ''
+        ]);
     }
 
     public function showResetForm(Request $request, $token = null)
