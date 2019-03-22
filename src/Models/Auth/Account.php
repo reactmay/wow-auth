@@ -27,8 +27,8 @@ class Account extends AccountWoW implements
 {
     use Notifiable, Authenticatable, Authorizable, CanResetPassword;
 
-
-
+    protected $primaryKey = 'account_id';
+        
     function __construct(array $attributes = [])
     {
         $this->hidden[] ='remember_token';
