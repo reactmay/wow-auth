@@ -56,4 +56,8 @@ class Account extends AccountWoW implements
     public function getAuthPassword(){
         return $this->pass_hash;
     }
+    
+    public function sendPasswordResetNotification($token){
+       $this->notify(new ResetPassword($token));
+    }
 }
