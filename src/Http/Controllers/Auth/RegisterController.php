@@ -68,16 +68,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $validator =  Validator::make($data, [
+        return Validator::make($data, [
             'username'  => 'required|max:255|unique:auth.account',
             'email'     => 'required|email|max:255|unique:auth.account|unique:auth.account,reg_mail',
             'password'  => 'required|min:6|confirmed',
             'g-recaptcha-response' => 'required|captcha'
         ]);
-
-        if($validator->fails()) {
-            toaster($validator->errors()->all());
-        }
     }
 
     /**
