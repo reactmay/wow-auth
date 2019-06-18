@@ -103,18 +103,14 @@ class RegisterController extends Controller
         return Account::create($account);
     }
 	
-	public function showRegistrationForm()
+	public function showRegistrationForm(Request $request)
     {
-        $data = [
-            'title' => Lang::get('auth.register_link')
-        ];
+//        $data = [
+//            'title' => Lang::get('auth.register_link')
+//        ];
+//
+//        return view('auth.register', $data);
 
-        return view('auth.register', $data);
-    }
-
-    public function authenticated(Request $request)
-    {
-        //
         return $request->all();
     }
 }
