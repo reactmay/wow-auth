@@ -54,6 +54,12 @@ class LoginController extends Controller
 	
 	public function showLoginForm()
     {
+        $intendedURL = \Session::get('url.intended');
+
+        if($intendedURL) {
+            toastr()->error('Необходимо войти в систему');
+        }
+
         $data = [
             'title' => Lang::get('auth.login_link')
         ];
