@@ -111,4 +111,10 @@ class RegisterController extends Controller
 
         return view('auth.register', $data);
     }
+
+    public function authenticated(Request $request)
+    {
+        //
+        return $request->all();
+    }
 }
