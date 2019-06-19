@@ -27,18 +27,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers {
-        redirectPath as laravelRedirectPath;
-    }
-
-    public function redirectPath()
-    {
-        // Do your logic to flash data to session...
-        toastr()->success('Auth successfully');
-
-        // Return the results of the method we are overriding that we aliased.
-        return $this->laravelRedirectPath();
-    }
+    use AuthenticatesUsers;
 
 	protected $username;
 	
@@ -86,5 +75,10 @@ class LoginController extends Controller
             'password' => 'required|string',
             'g-recaptcha-response' => 'required|captcha'
         ]);
+    }
+
+    public function authenticated(Request $request, User $user)
+    {
+        toastr()->success('Auth successfully!');
     }
 }
