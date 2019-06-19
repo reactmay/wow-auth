@@ -81,7 +81,7 @@ class LoginController extends Controller
         session()->flash('alert-type', 'success');
     }
 
-    public function getLogout()
+    public function logout()
     {
         $successmessage = 'Выход из аккаунта - успешно!';
         session()->flash('message', $successmessage);
