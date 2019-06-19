@@ -81,6 +81,5 @@ class LoginController extends Controller
             'message' => $successmessage,
             'alert-type' => 'success'
         ]);
-        return redirect()->intended($this->redirectPath());
     }
 }
