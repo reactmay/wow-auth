@@ -76,10 +76,11 @@ class LoginController extends Controller
             'g-recaptcha-response' => 'required|captcha'
         ]);
 
-        $successmessage = 'Эй, '.$this->username().', вы успешно авторизовались!';
-        $request->session([
+        $successmessage = 'Эй, '.Auth::user()->username.', вы успешно авторизовались!';
+        session([
             'message' => $successmessage,
             'alert-type' => 'success'
         ]);
+        return redirect()->intended($this->redirectPath());
     }
 }
