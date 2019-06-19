@@ -2,6 +2,7 @@
 
 namespace reactmay\WoWAuth\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Lang;
