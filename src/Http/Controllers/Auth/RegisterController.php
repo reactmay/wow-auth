@@ -100,6 +100,10 @@ class RegisterController extends Controller
             $account['password'] = md5($data['password']);
         }
 
+        $success_register_message = 'Создание аккаунта - успешно!';
+        session()->flash('message', $success_register_message);
+        session()->flash('alert-type', 'success');
+
         return Account::create($account);
     }
 	
