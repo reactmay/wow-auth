@@ -78,7 +78,9 @@ class LoginController extends Controller
 
         $successmessage = 'Вы успешно авторизовались!';
         session()->flash([
-            'message' => $successmessage,
+            'message' => $successmessage
+        ]);
+        session()->flash([
             'alert-type' => 'success'
         ]);
     }
