@@ -77,7 +77,7 @@ class LoginController extends Controller
         ]);
     }
 
-    public function authenticated(Request $request, User $user)
+    public function authenticated()
     {
         toastr()->success('Auth successfully!');
     }
