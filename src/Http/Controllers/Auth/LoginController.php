@@ -77,7 +77,7 @@ class LoginController extends Controller
         ]);
 
         $successmessage = 'Эй, '.$this->username().', вы успешно авторизовались!';
-        session([
+        $request->session([
             'message' => $successmessage,
             'alert-type' => 'success'
         ]);
