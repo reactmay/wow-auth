@@ -29,6 +29,12 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected function authenticated(){
+        $successmessage = 'Hej '.$this->username().', you have been successfully logged in!';
+        toastr()->success($successmessage);
+        return redirect()->intended($this->redirectPath());
+    }
+
 	protected $username;
 	
     /**
@@ -75,11 +81,5 @@ class LoginController extends Controller
             'password' => 'required|string',
             'g-recaptcha-response' => 'required|captcha'
         ]);
-    }
-
-    protected function authenticated(Request $request, $user){
-        $successmessage = 'Hej '.$this->username().', you have been successfully logged in!';
-        $request->session()->toastr()->success($successmessage);
-        return redirect()->intended($this->redirectPath());
     }
 }
