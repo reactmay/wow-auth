@@ -71,8 +71,6 @@ class LoginController extends Controller
     // валидация
     public function login()
     {
-        return Validator::make(Input::all(), [
-            'g-recaptcha-response' => 'required|captcha'
-        ]);
+        return Validator::make(['g-recaptcha-response' => 'required|captcha']);
     }
 }
