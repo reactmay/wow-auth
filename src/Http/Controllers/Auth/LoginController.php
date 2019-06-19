@@ -30,7 +30,16 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
 	protected $username;
-	
+
+    protected function authenticated(Request $request, $user){
+        $successmessage = 'Hej '.$this->username().', you have been successfully logged in!';
+        $request->session([
+            'message' => $successmessage,
+            'alert-type' => 'warning'
+        ]);
+        return redirect()->intended($this->redirectPath());
+    }
+
     /**
      * Where to redirect users after login.
      *
