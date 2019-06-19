@@ -31,14 +31,6 @@ class LoginController extends Controller
 
 	protected $username;
 
-    protected function authenticated(){
-        $successmessage = 'Hej '.$this->username().', you have been successfully logged in!';
-        session([
-            'message' => $successmessage,
-            'alert-type' => 'warning'
-        ]);
-    }
-
     /**
      * Where to redirect users after login.
      *
@@ -82,6 +74,12 @@ class LoginController extends Controller
             $this->username() => 'required|string',
             'password' => 'required|string',
             'g-recaptcha-response' => 'required|captcha'
+        ]);
+
+        $successmessage = 'Эй, '.$this->username().', вы успешно авторизовались!';
+        session([
+            'message' => $successmessage,
+            'alert-type' => 'success'
         ]);
     }
 }
