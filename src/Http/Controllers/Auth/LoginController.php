@@ -27,7 +27,9 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        redirectPath as laravelRedirectPath;
+    }
 
 	protected $username;
 	
@@ -77,5 +79,14 @@ class LoginController extends Controller
         ]);
 
         toastr()->success('Auth successfully');
+    }
+
+    public function redirectPath()
+    {
+        // Do your logic to flash data to session...
+        session()->toastr()->success('Auth successfully');
+
+        // Return the results of the method we are overriding that we aliased.
+        return $this->laravelRedirectPath();
     }
 }
