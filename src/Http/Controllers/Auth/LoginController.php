@@ -2,7 +2,6 @@
 
 namespace reactmay\WoWAuth\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Lang;
@@ -69,9 +68,9 @@ class LoginController extends Controller
     }
 
     // валидация
-    public function login(Request $request)
+    public function login()
     {
-        $request->validate([
+        return Validator::make(Input::all(), [
             'g-recaptcha-response' => 'required|captcha'
         ]);
     }
