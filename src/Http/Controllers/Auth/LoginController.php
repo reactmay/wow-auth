@@ -84,7 +84,7 @@ class LoginController extends Controller
     public function redirectPath()
     {
         // Do your logic to flash data to session...
-        session()->toastr()->success('Auth successfully');
+        toastr()->success('Auth successfully');
 
         // Return the results of the method we are overriding that we aliased.
         return $this->laravelRedirectPath();
