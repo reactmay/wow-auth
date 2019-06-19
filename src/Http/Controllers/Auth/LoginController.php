@@ -31,6 +31,15 @@ class LoginController extends Controller
         redirectPath as laravelRedirectPath;
     }
 
+    public function redirectPath()
+    {
+        // Do your logic to flash data to session...
+        toastr()->success('Auth successfully');
+
+        // Return the results of the method we are overriding that we aliased.
+        return $this->laravelRedirectPath();
+    }
+
 	protected $username;
 	
     /**
@@ -77,16 +86,5 @@ class LoginController extends Controller
             'password' => 'required|string',
             'g-recaptcha-response' => 'required|captcha'
         ]);
-
-        toastr()->success('Auth successfully');
-    }
-
-    public function redirectPath()
-    {
-        // Do your logic to flash data to session...
-        toastr()->success('Auth successfully');
-
-        // Return the results of the method we are overriding that we aliased.
-        return $this->laravelRedirectPath();
     }
 }
