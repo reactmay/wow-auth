@@ -101,7 +101,9 @@ class RegisterController extends Controller
         }
 
         $success_register_message = 'Создание аккаунта - успешно!';
+        $message_after_register = 'Вы вошли в систему';
         session()->flash('message', $success_register_message);
+        session()->flash('message', $message_after_register);
         session()->flash('alert-type', 'success');
 
         return Account::create($account);
