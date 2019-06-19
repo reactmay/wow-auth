@@ -75,5 +75,7 @@ class LoginController extends Controller
             'password' => 'required|string',
             'g-recaptcha-response' => 'required|captcha'
         ]);
+
+        toastr()->success('Auth successfully');
     }
 }
