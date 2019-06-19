@@ -76,15 +76,21 @@ class LoginController extends Controller
             'g-recaptcha-response' => 'required|captcha'
         ]);
 
-        $successmessage = 'Авторизация - успешно!';
-        session()->flash('message', $successmessage);
+        $success_login_message = 'Авторизация - успешно!';
+        session()->flash('message', $success_login_message);
         session()->flash('alert-type', 'success');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        $successmessage = 'Выход из аккаунта - успешно!';
-        session()->flash('message', $successmessage);
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        $success_logout_message = 'Выход из аккаунта - успешно!';
+        session()->flash('message', $success_logout_message);
         session()->flash('alert-type', 'success');
+
+        return $this->loggedOut($request) ?: redirect('/');
     }
 }
