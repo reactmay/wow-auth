@@ -79,7 +79,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user){
         $successmessage = 'Hej '.$this->username().', you have been successfully logged in!';
-        $request->toastr()->success($successmessage);
+        $request->session()->toastr()->success($successmessage);
         return redirect()->intended($this->redirectPath());
     }
 }
