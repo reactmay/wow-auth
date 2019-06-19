@@ -76,6 +76,10 @@ class LoginController extends Controller
             'g-recaptcha-response' => 'required|captcha'
         ]);
 
+    }
+
+    public function authenticated()
+    {
         $success_login_message = 'Авторизация - успешно!';
         session()->flash('message', $success_login_message);
         session()->flash('alert-type', 'success');
