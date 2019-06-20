@@ -70,7 +70,7 @@ class LoginController extends Controller
 
     protected function validateLogin(Request $request)
     {
-        if(env('APP_ENV', 'production')) {
+        if(env('APP_ENV') == 'production') {
             $request->validate([
                 $this->username() => 'required|string',
                 'password' => 'required|string',

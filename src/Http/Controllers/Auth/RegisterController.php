@@ -68,7 +68,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        if(env('APP_ENV', 'production')) {
+        if(env('APP_ENV') == 'production') {
             return Validator::make($data, [
                 'username'  => 'required|max:255|unique:auth.account',
                 'email'     => 'required|email|max:255|unique:auth.account|unique:auth.account,reg_mail',
