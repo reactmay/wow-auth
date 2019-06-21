@@ -65,7 +65,7 @@ class LoginController extends Controller
             'title' => Lang::get('auth.login_link')
         ];
 
-        return view('auth.login', $data);
+        return view('ucp.login', $data);
     }
 
     protected function validateLogin(Request $request)

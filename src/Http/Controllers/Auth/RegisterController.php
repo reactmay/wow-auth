@@ -121,6 +121,6 @@ class RegisterController extends Controller
             'title' => Lang::get('auth.register_link')
         ];
 
-        return view('auth.register', $data);
+        return view('ucp.register', $data);
     }
 }
