@@ -88,7 +88,7 @@ class ResetPasswordController extends Controller
             'title' => Lang::get('auth.page_change_password')
         ];
 
-        return view('auth.passwords.reset', $data)->with(
+        return view('ucp.passwords.reset', $data)->with(
             ['token' => $token, 'email' => $request->email]
         );
     }

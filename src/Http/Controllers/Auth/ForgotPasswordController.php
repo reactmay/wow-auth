@@ -47,6 +47,6 @@ class ForgotPasswordController extends Controller
             'title' => Lang::get('auth.page_reset_password')
         ];
 
-        return view('auth.passwords.email', $data);
+        return view('ucp.passwords.email', $data);
     }
 }
