@@ -50,17 +50,17 @@ class ForgotPasswordController extends Controller
         return view('ucp.passwords.email', $data);
     }
 
-    protected function validator(array $data)
+    protected function rules()
     {
         if(env('APP_ENV') == 'production') {
-            return Validator::make($data, [
+            return [
                 'email' => 'required|email',
                 'g-recaptcha-response' => 'required|captcha'
-            ]);
+            ];
         } else {
-            return Validator::make($data, [
+            return [
                 'email' => 'required|email'
-            ]);
+            ];
         }
     }
 }
