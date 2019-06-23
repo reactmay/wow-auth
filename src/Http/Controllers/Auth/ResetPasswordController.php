@@ -92,4 +92,20 @@ class ResetPasswordController extends Controller
             ['token' => $token, 'email' => $request->email]
         );
     }
+
+    protected function validator(array $data)
+    {
+        if(env('APP_ENV') == 'production') {
+            return Validator::make($data, [
+                'email'     => 'required|email',
+                'password'  => 'required|min:6|confirmed',
+                'g-recaptcha-response' => 'required|captcha'
+            ]);
+        } else {
+            return Validator::make($data, [
+                'email'     => 'required|email',
+                'password'  => 'required|min:6|confirmed'
+            ]);
+        }
+    }
 }
