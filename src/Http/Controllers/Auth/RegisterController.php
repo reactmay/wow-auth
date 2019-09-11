@@ -70,14 +70,14 @@ class RegisterController extends Controller
     {
         if(env('APP_ENV') == 'production') {
             return Validator::make($data, [
-                'username'  => 'required|max:255|unique:auth.account',
+                'username'  => 'required|alpha_dash|max:255|unique:auth.account',
                 'email'     => 'required|email|max:255|unique:auth.account|unique:auth.account,reg_mail',
                 'password'  => 'required|min:6|confirmed',
                 'g-recaptcha-response' => 'required|captcha'
             ]);
         } else {
             return Validator::make($data, [
-                'username'  => 'required|max:255|unique:auth.account',
+                'username'  => 'required|alpha_dash|max:255|unique:auth.account',
                 'email'     => 'required|email|max:255|unique:auth.account|unique:auth.account,reg_mail',
                 'password'  => 'required|min:6|confirmed',
             ]);
