@@ -94,7 +94,7 @@ class RegisterController extends Controller
     {
 
         $account = [
-            'username'  => $data['username'],
+            'username'  => strtolower($data['username']),
             'email'     => $data['email'],
             'pass_hash'  => $this->hasher->make([
                 'username' => $data['username'],
