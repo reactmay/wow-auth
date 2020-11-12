@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\reactmay\WoWAuth\Http\Controllers\Auth;
+namespace Reactmay\WoWAuth\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

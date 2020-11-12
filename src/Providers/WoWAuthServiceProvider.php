@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\reactmay\WoWAuth\Providers;
+namespace Reactmay\WoWAuth\Providers;
 
 use Auth;
 

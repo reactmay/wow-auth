@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\reactmay\WoWAuth\Hashing;
+namespace Reactmay\WoWAuth\Hashing;
 
 use Illuminate\Contracts\Hashing\Hasher as IlluminateHasher;
 
