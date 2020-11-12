@@ -1,6 +1,6 @@
 <?php
 
-namespace reactmay\WoWAuth\Providers;
+namespace Vendor\reactmay\WoWAuth\Providers;
 
 use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Contracts\Auth\Authenticatable as UserContract;

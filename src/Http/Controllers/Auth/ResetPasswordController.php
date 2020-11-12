@@ -1,6 +1,6 @@
 <?php
 
-namespace reactmay\WoWAuth\Http\Controllers\Auth;
+namespace Vendor\reactmay\WoWAuth\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;

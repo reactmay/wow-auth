@@ -1,6 +1,6 @@
 <?php
 
-namespace reactmay\WoWAuth\Guard;
+namespace Vendor\reactmay\WoWAuth\Guard;
 
 use Illuminate\Auth\SessionGuard;
 use Illuminate\Http\Request;
