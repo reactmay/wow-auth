@@ -15,7 +15,7 @@
         "reactmay/wow-models": ">=0.1.1"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "reactmay\\WoWAuth\\": "src/"
         }
     },
