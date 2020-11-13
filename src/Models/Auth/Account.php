@@ -1,6 +1,6 @@
 <?php
 
-namespace Reactmay\WoWAuth\Models\Auth;
+namespace reactmay\WoWAuth\Models\Auth;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Notifications\Notifiable;

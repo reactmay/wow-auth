@@ -1,6 +1,6 @@
 <?php
 
-namespace Reactmay\WoWAuth;
+namespace reactmay\WoWAuth;
 
 use Illuminate\Support\Facades\Route;
 

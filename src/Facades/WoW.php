@@ -1,6 +1,6 @@
 <?php
 
-namespace Reactmay\WoWAuth\Facades;
+namespace reactmay\WoWAuth\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
