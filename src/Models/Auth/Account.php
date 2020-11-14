@@ -4,7 +4,7 @@ namespace reactmay\WoWAuth\Models\Auth;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Notifications\Notifiable;
-use reactmay\WoWModels\Auth\Account as AccountWoW;
+use reactmay\WoWAuth\Models\Auth\AccountId as AccountWoW;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
@@ -29,7 +29,7 @@ class Account extends AccountWoW implements
     use Notifiable, Authenticatable, Authorizable, CanResetPassword;
 
     protected $primaryKey = 'account_id';
-        
+
     function __construct(array $attributes = [])
     {
         $this->hidden[] ='remember_token';
@@ -57,7 +57,7 @@ class Account extends AccountWoW implements
     public function getAuthPassword(){
         return $this->pass_hash;
     }
-    
+
     public function sendPasswordResetNotification($token){
        $this->notify(new ResetPassword($token));
     }
